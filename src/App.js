@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
 function App() {
+  const [name, setName] = useState("Shrek");
+  const [post, setPost] = useState("Shrek is love, Shrek is life");
+
+  const handleChangeName = (e) => {
+    setName(e.target.value);
+  };
+  const handleChangePost = (e) => {
+    setPost(e.target.value);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <input type="text" placeholder="Post Here" onChange={handleChangePost} />
+      <input
+        type="text"
+        placeholder="Change Username Here"
+        onChange={handleChangeName}
+      />
+
+      <div className="post-container">
+        <img src={require("./shrek-is-love.png")} />
+        <div>{name} @Shrek007</div>
+        <div>{post}</div>
+      </div>
+    </>
   );
 }
 

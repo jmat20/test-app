@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 20vmin;
+  border-radius: 100%;
+  grid-row: 1/2 span;
+}
+
+.post-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 50vmin;
+  background-color: black;
+  color: white;
+  place-content: center;
+}
